@@ -6,21 +6,6 @@ controller:
 
 server:
   replicas: 1
-
-repoServer:
-  replicas: 1
-
-applicationSet:
-  replicas: 1
-
-
-global:
-  domain: argocd.example.com
-
-certificate:
-  enabled: true
-
-server:
   ingress:
     enabled: true
     ingressClassName: nginx
@@ -28,3 +13,15 @@ server:
       nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
       nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     tls: true
+
+repoServer:
+  replicas: 1
+
+applicationSet:
+  replicas: 1
+
+global:
+  domain: argocd.example.com
+
+certificate:
+  enabled: true
