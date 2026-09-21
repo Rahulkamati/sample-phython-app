@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: python-apps
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/Rahulkamati/sample-phython-app.git
+    targetRevision: main
+    path: charts/python-apps
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: python
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
