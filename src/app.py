@@ -11,12 +11,12 @@ items = [
 
 @app.route("/", methods=["GET"])
 def home():
-    return jsonify({"message": "Welcome to the Sample Flask API - v2"})
+    return jsonify({"message": "Welcome to the Sample Flask API - v3"})
 
 
 @app.route("/health", methods=["GET"])
 def health_check():
-    return jsonify({"status": "ok", "version": "v2"})
+    return jsonify({"status": "ok", "version": "v3"})
 
 
 @app.route("/items", methods=["GET"])
